@@ -1,11 +1,9 @@
-function show_hide_password(target){
-	var input = document.getElementById('password-input');
-	if (input.getAttribute('type') == 'password') {
-		target.classList.add('view');
-		input.setAttribute('type', 'text');
-	} else {
-		target.classList.remove('view');
-		input.setAttribute('type', 'password');
-	}
-	return false;
+function show_hide_password() {
+    var x = document.getElementById("Password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+    return false;
 }

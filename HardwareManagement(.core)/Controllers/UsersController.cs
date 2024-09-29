@@ -22,44 +22,34 @@ namespace HardwareManagement_.core_.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            TblUser user= new TblUser();
+            TblUser user = new TblUser();
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([Bind("Id,UserName,Password")] TblUser User)
         {
-
             if (ModelState.IsValid)
             {
-                var Person = from m in _context.TblUsers select m;
-                Person = Person.Where(s => s.UserName.Contains(User.UserName));
-
-                if (Person.Count() != 0)
+                var Person = _context.TblUsers.Where(s => s.UserName == User.UserName).FirstOrDefault();
+                if (Person != null)
                 {
-                    if (Person.First().Password == User.Password)
+                    if (Person.Password == User.Password)
                     {
-
                         return RedirectToAction("Index", "Home");
-
                     }
                 }
-
-
-
             }
             ViewBag.Message = "اطلاعات ورود نادرست است.";
             return View("_Message");
         }
 
-
-
         // GET: Users
         public async Task<IActionResult> Index()
         {
-              return _context.TblUsers != null ? 
-                          View(await _context.TblUsers.ToListAsync()) :
-                          Problem("Entity set 'HardwaremanagementContext.TblUsers'  is null.");
+            return _context.TblUsers != null ?
+                        View(await _context.TblUsers.ToListAsync()) :
+                        Problem("Entity set 'HardwaremanagementContext.TblUsers'  is null.");
         }
 
         // GET: Users/Details/5
@@ -185,14 +175,14 @@ namespace HardwareManagement_.core_.Controllers
             {
                 _context.TblUsers.Remove(tblUser);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool TblUserExists(int id)
         {
-          return (_context.TblUsers?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.TblUsers?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

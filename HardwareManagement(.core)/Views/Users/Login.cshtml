@@ -54,7 +54,7 @@
                                           @*  <input id="password-input" type="password" class="inputBx password" name="password" required="required"> *@
                                             @Html.PasswordFor(m => m.Password, new { @class = "form"})
                                             <span asp-validation-for="Password" class="text-danger" class="icon-inside">Password</span>
-                                                <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+                                                <a href="#" class="password-control" onclick="return show_hide_password();"></a>
                                             <i class="fas fa-key"></i>
                                                
                                          </div>
@@ -83,19 +83,6 @@
             </div>
         </div>
     </section>
-    <script src="./js/script.js"></script>
-    <script>
-       $ function show_hide_password(target) {
-            var input = document.getElementById('password-input');
-            if (input.getAttribute('type') == 'password') {
-                target.classList.add('view');
-                input.setAttribute('type', 'text');
-            } else {
-                target.classList.remove('view');
-                input.setAttribute('type', 'password');
-            }
-            return false;
-        }
-    </script>
+    <script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
