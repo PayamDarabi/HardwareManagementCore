@@ -1,0 +1,179 @@
+﻿@model IEnumerable<HardwareManagement_.core_.Models.Entity.TblHardware>
+@{
+    var counter = 1;
+}
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-critters-container="" data-bs-theme="light">
+
+<div class="content-header">
+    <h1 align="center">
+        سامانه مدیریت تجهیزات رایانه ای
+    </h1>
+
+    <o1 class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> مدیریت سخت افزار</a></li>
+        <li class="active">جستجوی سخت افزار</li>
+
+    </o1>
+</div>
+
+<div class="content">
+     <div class="box-header">
+                    <h3 class="box-title">سخت افزار ها</h3>
+     </div>
+                <br />
+                <br />
+                <div class="box-body">
+                  
+                         <form asp-action="SerachHw1" asp-controller="Hardwares">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                         <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr>
+                                            <th style=" Background:green ">
+                                                ردیف
+                                            </th>
+
+                                            <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد"
+                                                aria-sort="ascending">شماره اموال</th>
+                                            <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد"
+                                                aria-sort="ascending"> عنوان</th>
+                                            <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد"
+                                                aria-sort="ascending">مدل</th>
+                                            <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد"
+                                                aria-sort="ascending">وضعیت سخت افزار</th>
+                                            <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد"
+                                                aria-sort="ascending">  شماره پرسنلی</th>
+                                            <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد"
+                                                aria-sort="ascending">محل قرار گیری</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @counter
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.AssetNo)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Title)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Model)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.StatusHw)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.PersonId)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Location)
+                                                </td>
+
+
+                                            </tr>
+                                            counter += 1;
+                                        }
+                                    </tbody>
+                                 </table>
+                          </form>
+                        @section Scripts
+                        {
+                            <script>
+                                $(document).ready(function () {
+                                    $('#example1').DataTable();
+                                });
+                            </script>
+                        }
+                      </div>
+                <!-- /.box-body -->
+          
+    
+
+
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../../dist/js/adminlte.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+
+</div>
+</html>
+
+
+@* <h1>Details</h1>
+
+<div>
+    <h4>TblHardware</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SerialNo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SerialNo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AssignDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AssignDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RecieveDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RecieveDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PersonId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusHw)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StatusHw)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AssetNo">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@

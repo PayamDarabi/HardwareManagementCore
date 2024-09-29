@@ -1,0 +1,228 @@
+﻿
+@model IEnumerable<HardwareManagement_.core_.Models.Entity.TblHardware>
+@* @model IList<HardwareManagement_.core_.Models.Entity.TblHardware>
+ *@
+@* @using HardwareManagement_.core_.Models.Entity; *@
+@{
+    var counter = 1;
+}
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+   }
+
+<
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-critters-container="" data-bs-theme="light">
+
+<div class="content-header">
+    <h1 align="center">
+        سامانه مدیریت تجهیزات رایانه ای
+    </h1>
+
+    <o1 class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> مدیریت سخت افزار</a></li>
+        <li class="active">افزودن</li>
+       
+    </o1>
+</div>
+<div class="row">
+    <div class="col-md-4">
+    </div>
+</div>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+          
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">سخت افزار ها</h3>
+                </div>
+                <br />
+                <br />
+                <div class="box-body">
+                    <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                      
+                          <div class="row">
+                          
+                                <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr>
+                                            <th style=" Background:green ">
+                                                ردیف
+                                            </th>
+
+                                            <th style="Background:green " class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد: activate to sort column descending"
+                                                aria-sort="ascending">شماره اموال</th>
+                                            <th style="Background:green " class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد: activate to sort column descending"
+                                                aria-sort="ascending"> عنوان</th>
+                                            <th style="Background:green " class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد: activate to sort column descending"
+                                                aria-sort="ascending">مدل</th>
+                                            <th style="Background:green " class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد: activate to sort column descending"
+                                                aria-sort="ascending">وضعیت سخت افزار</th>
+                                             <th style="Background:green " class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد: activate to sort column descending"
+                                                aria-sort="ascending">  شماره پرسنلی</th>
+                                            <th style="Background:green " class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="وضعیت افراد: activate to sort column descending"
+                                                aria-sort="ascending">محل قرار گیری</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @counter
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.AssetNo)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Title)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Model)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.StatusHw)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.PersonId)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Location)
+                                                </td>
+
+
+                                            </tr>
+                                            counter += 1;
+                                        }
+                                    </tbody>
+
+                                   
+                                </table>
+                            
+                        </div>
+                        @section Scripts
+                        {
+                            <script>
+                                 $(document).ready(function () {
+                                    $('#example1').DataTable();
+                                });
+                            </script>
+                        }
+                        @* <div class="row">
+                           
+                                <div class="col-sm-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                                    <ul class="pagination">
+                                        <li class="page-item" id="example1_previous">
+                                            <a href="#" class="page-link" aria-controls="example1" data-dt-idx="0" tabindex="0">Previous</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                           <a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0">2</a>
+                                        </li>
+                                        <li class="page-item"><a href="#" class="page-link" aria-controls="example1" data-dt-idx="3" tabindex="0">3</a></li>
+                                        <li class="page-item"><a href="#" class="page-link" aria-controls="example1" data-dt-idx="4" tabindex="0">4</a></li>
+                                        <li class="page-item"><a href="#" class="page-link" aria-controls="example1" data-dt-idx="5" tabindex="0">5</a></li>
+                                        <li class="page-item"><a href="#" class="page-link" aria-controls="example1" data-dt-idx="6" tabindex="0">6</a></li>
+                                        <li class"page-item" id="example1_next"><a href="#" class="page-link" aria-controls="example1" data-dt-idx="7" tabindex="0">Next</a></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                   
+                         </div> *@
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    
+   @*  @{
+        var preDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    }
+    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex-1)" class="btn btn-default @preDisabled"> previous </a>
+    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex+1)" class="btn btn-default @nextDisabled"> next </a>
+
+    @if (paging.TotalPage>0)
+    {
+        <ul class="pagination justify-content-end">
+            @for (var pageNumber = paging.StartPage; pageNumber <= paging.EndPage; pageNumber++)
+            {
+                <li class="pageNumber-item @(pageNumber==paging.CurrentPage? "active" : "")">
+                    <a class="page-link" asp-controller="Hardwares" asp-action="Index" asp-route-pageNumber="@pageNumber">@pageNumber</a>
+                </li>
+            }
+        </ul>
+    } *@
+</section>
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../../dist/js/adminlte.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+<script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+<script>
+    // for demo  //
+    $('td', 'table').each(function (i) {
+        $(this).text(i + 1);
+    });
+    // for demo  //
+
+
+    $('table.paginated').each(function () {
+        var currentPage = 0;
+        var numPerPage = 5; // number of items
+        var $table = $(this);
+        //var $tableBd = $(this).find("tbody");
+
+        $table.bind('repaginate', function () {
+            $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+        });
+        $table.trigger('repaginate');
+        var numRows = $table.find('tbody tr').length;
+        var numPages = Math.ceil(numRows / numPerPage);
+        var $pager = $('<div class="pager"></div>');
+        for (var page = 0; page < numPages; page++) {
+            $('<span class="page-number"></span>').text(page + 1).bind('click', {
+                newPage: page
+            }, function (event) {
+                currentPage = event.data['newPage'];
+                $table.trigger('repaginate');
+                $(this).addClass('active').siblings().removeClass('active');
+            }).appendTo($pager).addClass('clickable');
+        }
+        if (numRows > numPerPage) {
+            $pager.insertAfter($table).find('span.page-number:first').addClass('active');
+        }
+    });
+</script>
+</html>

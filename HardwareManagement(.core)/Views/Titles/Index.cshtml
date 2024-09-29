@@ -1,0 +1,139 @@
+﻿@model IEnumerable<HardwareManagement_.core_.Models.Entity.TblTitle>
+@{
+    var counter = 1;
+}
+
+@{
+    ViewData["Title"] = "Titles ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<div class="content-header">
+    <h1 align="center">
+        سامانه مدیریت تجهیزات رایانه ای
+    </h1>
+
+    <o1 class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> اطلاعات پایه</a></li>
+        <li class="active">انواع سخت افزارها</li>
+
+    </o1>
+</div>
+<br>
+<br>
+<div class="content">
+  <div class="row" style="position:inherit; padding-left:30%;   padding-right:30%;">
+        <div class="col-md-12">
+            <div class="box box-solid "  style="overflow:hidden; background-color:whitesmoke; border-color:whitesmoke" >
+                <div class="box-header with-border">
+                    <h3 class="box-title">افزودن عناوین سخت افزار</h3>
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body no-padding">
+                    <form asp-action="Create" asp-controller="Titles">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li>
+                                <div class="input-group margin">
+                                    <input id="Title" name="Title" type="text" class="form-control" required="">
+                                    <span class="input-group-btn">
+                                        @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                        <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+            </div>
+         
+            <div class="col-md-12">
+               <div class="box-primery" >
+                    <div class="box-body P-0">
+                  <table id="example1" class="table table-bordered table-striped dataTable">
+                            <thead style="background-color:darksalmon">
+                                <tr>
+                                <th style="width: 20px; text-align:center;">
+                                        ردیف
+                                    </th>
+                                    <th  class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="انواع سخت افزارها: activate to sort column descending"
+                                        aria-sort="ascending">انواع سخت افزارها</th>
+                                <th style="width: 45px;  align-content:center;">
+                                        عملیات
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td style="text-align:center;">
+                                        @counter
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                counter += 1;
+                            }
+                            </tbody>
+                  </table>
+                    </div>
+               </div>
+
+           </div>
+  </div>
+   
+    
+    <!-- jQuery 3 -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- DataTables -->
+    <script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <!-- page script -->
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })
+    </script> 
+  </div>
+</html>
+

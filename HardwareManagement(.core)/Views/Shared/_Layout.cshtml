@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>فیکس | کنترل پنل</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/Theme/dist/css/bootstrap-theme.css">
+    <!-- Bootstrap rtl -->
+    <link rel="stylesheet" href="/Theme/dist/css/rtl.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/Theme/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/Theme/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/Theme/dist/css/AdminLTE.css">
+ 
+    <link rel="stylesheet" href="/Theme/dist/css/skins/_all-skins.min.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link href="/css/datatables.datatables.min.css" rel="stylesheet" />
+    <a href="/Theme/bower_components/vendors/bootstrap-rtl/dist/css/bootstrap-rtl.css.map">~/theme/bower_components/vendors/bootstrap-rtl/dist/css/bootstrap-rtl.css.map</a>
+    <link href="/Theme/bower_components/vendors/bootstrap-rtl/dist/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="/Theme/bower_components/vendors/bootstrap-rtl/dist/css/bootstrap-rtl.css" rel="stylesheet" />
+    <a href="/Theme/bower_components/vendors/bootstrap/dist/css/bootstrap.css.map">~/theme/bower_components/vendors/bootstrap/dist/css/bootstrap.css.map</a>
+    <a href="/Theme/bower_components/vendors/bootstrap/dist/css/bootstrap.min.css.map">~/theme/bower_components/vendors/bootstrap/dist/css/bootstrap.min.css.map</a>
+    <link href="/Theme/" rel="stylesheet" />
+    <link href="/Theme/bower_components/vendors/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Theme/bower_components/build/css/custom.min.css" rel="stylesheet" />
+    <link href="/Theme/aspnetzerodemo_files/theme.css" rel="stylesheet" />
+     
+</head>
+
+<body class="hold-transition skin-blue fixed sidebar-mini" style="height: auto; min-height: 100%;">
+    <div class="wrapper" style="height: auto; min-height: 100%;">
+
+        <div class="modal" id="Default modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                       
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    <header class="main-header">
+            <!-- Logo -->
+            <a href="/Theme/index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini">پنل</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>کنترل پنل </b></span>
+            </a>
+             <nav class="navbar navbar-static-top">
+              <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu" style="position:inherit;">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">4</span>
+                            </a>
+                           
+                        <!-- Notifications: style can be found in dropdown.less -->
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">۱۰</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">۱۰ اعلان جدید</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-users text-aqua"></i> ۵ کاربر جدید ثبت نام کردند
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-warning text-yellow"></i> اخطار دقت کنید
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-users text-red"></i> ۴ کاربر جدید ثبت نام کردند
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-shopping-cart text-green"></i> ۲۵ سفارش جدید
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-user text-red"></i> نام کاربریتان را تغییر دادید
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">نمایش همه</a></li>
+                            </ul>
+                        </li>
+                        <!-- Tasks: style can be found in dropdown.less -->
+                        <li class="dropdown tasks-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-flag-o"></i>
+                                <span class="label label-danger">۹</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">۹ کار برای انجام دارید</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li>
+                                            <!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    ساخت دکمه
+                                                    <small class="pull-left">20%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                                                         aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">20% تکمیل شده</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <!-- end task item -->
+                                        <li>
+                                            <!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    ساخت قالب جدید
+                                                    <small class="pull-left">40%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
+                                                         aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">40% تکمیل شده</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <!-- end task item -->
+                                        <li>
+                                            <!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    تبلیغات
+                                                    <small class="pull-left">60%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
+                                                         aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">60% تکمیل شده</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <!-- end task item -->
+                                        <li>
+                                            <!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    ساخت صفحه فرود
+                                                    <small class="pull-left">80%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
+                                                         aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">80% تکمیل شده</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <!-- end task item -->
+                                    </ul>
+                                </li>
+                                <li class="footer">
+                                    <a href="#">نمایش همه</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="/Theme/dist/img/user.png" class="user-image" alt="User Image">
+                                <span class="hidden-xs">
+                                    نت کپی
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="/Theme/dist/img/user.png" class="img-circle" alt="User Image">
+
+                                    <p>
+                                       
+
+                                        <small>کاربر</small>
+                                    </p>
+                                </li>
+                               <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">تغییر کلمه عبور</a>
+                                    </div>
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">خروج</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- right side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-right image">
+                        <img src="/Theme/dist/img/user.png" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-right info">
+                        <p>
+                            نت کپی
+                        </p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> آنلاین</a>
+                    </div>
+                </div>
+               
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">منو</li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i> <span>اطلاعات پایه</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Titles/index"><i class="fa fa-circle-o"></i> سخت افزارها</a></li>
+                            <li><a href="/Models/Index"><i class="fa fa-circle-o"></i> مدل های سخت افزار</a></li>
+                            <li><a href="/StatusHws/index"><i class="fa fa-circle-o"></i> وضعیت سخت افزار</a></li>
+                            <li><a href="/Status/index"><i class="fa fa-circle-o"></i> وضعیت کارکنان</a></li>
+                            <li><a href="/Stores/index"><i class="fa fa-circle-o"></i> انبارها </a></li>
+                        </ul>
+                    </li>
+                   
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>مدیریت کارکنان</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            
+                            <li><a href="/Persons/index"><i class="fa fa-circle-o"></i>افزودن کاربر </a></li>
+                            <li><a href="/Persons/InfoPrs"><i class="fa fa-circle-o"></i>اطلاعات کاربران </a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>مدیریت سخت افزار ها</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Hardwares/index"><i class="fa fa-circle-o"></i>افزودن سخت افزار</a></li>
+                            <li><a href="/Hardwares/SearchHw"><i class="fa fa-circle-o"></i> جستجوی سخت افزار</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-edit"></i> <span>گزارشات</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Theme/pages/forms/general.html"><i class="fa fa-circle-o"></i> گزارش به تفکیک سخت افزار</a></li>
+                            <li><a href="/Theme/pages/forms/advanced.html"><i class="fa fa-circle-o"></i> گزارش به تفکیک واحد</a></li>
+                            <li><a href="/Stores/RptOfSt"><i class="fa fa-circle-o"></i>گزارش موجودی انبارها </a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-table"></i> <span>تاریخچه</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Theme/pages/tables/simple.html"><i class="fa fa-circle-o"></i> تاریخچه ی سخت افزار</a></li>
+                            <li><a href="/Theme/pages/tables/data.html"><i class="fa fa-circle-o"></i> تاریخچه کاربر</a></li>
+                        </ul>
+                    </li>
+                    
+                   
+                    <li class="header">برچسب ها</li>
+                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>مهم</span></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>هشدار</span></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>اطلاعات</span></a></li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+           
+            <!-- Main content -->
+            <section class="content">
+                <div >
+                                                    
+                @RenderBody()
+                </div>
+              
+            </section> </div>
+            <!-- /.content -->
+        
+        <!-- /.content-wrapper -->
+
+       
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+              
+              
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              
+                    <!-- /.control-sidebar-menu -->
+                     </div><div id="control-sidebar-theme-demo-options-tab" class="tab-pane active">
+                <div><h4 class="control-sidebar-heading">رنگ قالب</h4>
+               
+                   <ul class="list-unstyled clearfix"><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-blue" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                    <div><span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9"></span><span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a><p class="text-center no-margin">آبی</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-black" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover"><div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
+                    <span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe"></span><span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #222"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a><p class="text-center no-margin">سفید</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-purple" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                    <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span>
+                    <span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a><p class="text-center no-margin">بنفش</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-green" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span>
+                    <span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
+                    <div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
+                    <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a><p class="text-center no-margin">سبز</p></li>
+                    <li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-red" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover"><div>
+                        <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span><span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
+                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a>
+                    <p class="text-center no-margin">قرمز</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-yellow" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover"><div>
+                    <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span>
+                    <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
+                    <div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
+                    <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div>
+                               </a><p class="text-center no-margin">زرد</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-blue-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                    <div><span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9"></span><span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                    <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a><p class="text-center no-margin" style="font-size: 12px">آبی روشن</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-black-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover"><div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
+                    <span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe"></span><span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                    <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a><p class="text-center no-margin" style="font-size: 12px">سفید روشن</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-purple-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
+                    <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span><span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a><p class="text-center no-margin" style="font-size: 12px">بنفش روشن</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-green-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span><span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a><p class="text-center no-margin" style="font-size: 12px">سبز روشن</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-red-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span><span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                    <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div></a><p class="text-center no-margin" style="font-size: 12px">قرمز روشن</p></li><li style="float:left; width: 33.33333%; padding: 5px;"><a href="javascript:void(0)" data-skin="skin-yellow-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span><span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                    <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span></div>
+                                                                                                                                                                                                                                                                                                                                                                               </a><p class="text-center no-margin" style="font-size: 12px">زرد روشن</p></li></ul></div></div>
+                   
+            </div>
+              
+              <div class="control-sidebar-bg"></div>
+          
+    <!-- ./wrapper -->
+    <!-- jQuery 3 -->
+    <script src="/Theme/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/Theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+   @*  <script src="/Theme/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script> *@
+    <!-- FastClick -->
+    <script src="/Theme/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/Theme/dist/js/adminlte.min.js"></script>
+    <script src="~/js/datatables.min.js"></script>
+    <script src="~/theme/bower_components/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/theme/bower_components/vendors/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/theme/dist/js/adminlte.min.js"></script>
+    <script src="~/theme/dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/Theme/aspnetzerodemo_files/polyfills.ee85fd469cc428ad.js"></script>
+    <script src="/Theme/dist/js/demo.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,778 @@
+﻿@model IEnumerable<HardwareManagement_.core_.Models.Entity.TblModel>
+
+@{
+    ViewData["Title"] = "Models ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<div class="content-header">
+    <h1 align="center">
+        سامانه مدیریت تجهیزات رایانه ای
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> اطلاعات پایه</a></li>
+        <li class="active">مدل های سخت افزارها</li>
+    </ol>
+   
+</div>
+<br />
+<br />
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>
+                <i class="fa fa-bars"></i> گروه بندی مدل ها 
+              
+            </h2>
+             <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          
+        <div class="col-xs-9">
+                <!-- Tab panes -->
+                <div class="tab-content" >
+                    <div class="tab-pane" id="home-r">
+                    <div class="box box-solid collapsed-box" style=" overflow:hidden; background-color:whitesmoke; border-color:whitesmoke">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">افزودن مدل</h3>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="box-body no-padding" >
+                            <form asp-action="Create" asp-controller="Models">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <div class="input-group margin">
+                                            <input id="Model" name="Model" type="text" class="form-control" required="">
+                                            <span class="input-group-btn">
+                                                @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                                <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                      <table id="case" class="table table-bordered table-striped dataTable">
+                         <thead style="background-color:darksalmon">
+                            <tr>
+                                <th style="width: 20px; text-align:center;">
+                                    ردیف
+                                </th>
+                                <th>مدل های کیس</th>
+                                <th style="width: 45px;  align-content:center;">
+                                    عملیات
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            @{
+                                var Counter = 1;
+                            }
+                            @foreach (var item in Model.Where(i => i.Title == "case"))
+                            {
+                                
+
+                                <tr>
+                                    <td style="text-align:center;">
+                                       @Counter
+                                      
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                Counter += 1;
+                            }
+                        </tbody>
+                    </table>
+                    
+                    </div>
+                    <div class="tab-pane" id="profile-r">
+                    <div class="box box-solid collapsed-box" style=" overflow:hidden; background-color:whitesmoke; border-color:whitesmoke">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">افزودن مدل</h3>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-body no-padding">
+                            <form asp-action="Create" asp-controller="Models">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <div class="input-group margin">
+                                            <input id="Model" name="Model" type="text" class="form-control" required="">
+                                            <span class="input-group-btn">
+                                                @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                                <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <table id="monitor" class="table table-bordered table-striped dataTable">
+                       
+
+                        <thead style="background-color:darksalmon">
+                            <tr>
+                                <th style="width: 20px; text-align:center;">
+                                    ردیف
+                                </th>
+                                <th>مدل های مانیتور</th>
+                                <th style="width: 45px;  align-content:center;">
+                                    عملیات
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var CounterM = 1;
+                            }
+                            @foreach (var item in Model.Where(i => i.Title == "monitor"))
+                            {
+                               
+                                <tr>
+                                   
+                                    <td style="text-align:center;">
+                                        
+                                           
+                                       @CounterM
+                                       
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                CounterM += 1;
+
+                            }
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="tab-pane" id="messages-r">
+                    <div class="box box-solid collapsed-box" style=" overflow:hidden; background-color:whitesmoke; border-color:whitesmoke">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">افزودن مدل</h3>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-body no-padding">
+                            <form asp-action="Create" asp-controller="Models">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <div class="input-group margin">
+                                            <input id="Model" name="Model" type="text" class="form-control" required="">
+                                            <span class="input-group-btn">
+                                                @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                                <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <table id="printer" class="table table-bordered table-striped dataTable">
+                        <thead style="background-color:darksalmon">
+                            <tr>
+                                <th style="width: 20px; text-align:center;">
+                                    ردیف
+                                </th>
+                                <th>مدل های پرینتر</th>
+                                <th style="width: 45px;  align-content:center;">
+                                    عملیات
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var CounterP = 1;
+                            }
+                            @foreach (var item in Model.Where(i => i.Title == "printer"))
+                            {
+                               
+                                <tr>
+                                    <td style="text-align:center;">
+                                        @CounterP
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                CounterP += 1;
+                            }
+                        </tbody>
+                    </table>
+                    
+                    </div>
+                    <div class="tab-pane" id="scan">
+                    <div class="box box-solid collapsed-box" style=" overflow:hidden; background-color:whitesmoke; border-color:whitesmoke">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">افزودن مدل</h3>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="box-body no-padding">
+                            <form asp-action="Create" asp-controller="Models">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <div class="input-group margin">
+                                            <input id="Model" name="Model" type="text" class="form-control" required="">
+                                            <span class="input-group-btn">
+                                                @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                                <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <table id="scanner" class="table table-bordered table-striped dataTable">
+                        <thead style="background-color:darksalmon">
+                            <tr>
+                                <th style="width: 20px; text-align:center;">
+                                    ردیف
+                                </th>
+                                <th>مدل های اسکنر</th>
+                                <th style="width: 45px;  align-content:center;">
+                                    عملیات
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var CounterS = 1;
+                            }
+                            @foreach (var item in Model.Where(i => i.Title == "scanner"))
+                            {
+                               
+                                <tr>
+                                    <td style="text-align:center;">
+                                       @CounterS
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                CounterS += 1;
+                            }
+                        </tbody>
+                    </table>
+                    
+                      </div>
+                    <div class="tab-pane" id="thin">
+                    <div class="box box-solid collapsed-box" style=" overflow:hidden; background-color:whitesmoke; border-color:whitesmoke">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">افزودن مدل</h3>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="box-body no-padding">
+                            <form asp-action="Create" asp-controller="Models">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <div class="input-group margin">
+                                            <input id="Model" name="Model" type="text" class="form-control" required="">
+                                            <span class="input-group-btn">
+                                                @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                                <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <table id="thin client" class="table table-bordered table-striped dataTable">
+                        <thead style="background-color:darksalmon">
+                            <tr>
+                                <th style="width: 20px; text-align:center;">
+                                    ردیف
+                                </th>
+                                <th>مدل های تین کلاینت</th>
+                                <th style="width: 45px;  align-content:center;">
+                                    عملیات
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var CounterT = 1;
+                            }
+                            @foreach (var item in Model.Where(i => i.Title == "thin client"))
+                            {
+                               
+                                <tr>
+                                    <td style="text-align:center;">
+                                        @CounterT
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                CounterT += 1;
+                            }
+                        </tbody>
+                    </table>
+                    
+                </div>
+                    <div class="tab-pane" id="kvm">
+                    <div class="box box-solid collapsed-box" style=" overflow:hidden; background-color:whitesmoke; border-color:whitesmoke">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">افزودن مدل</h3>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="box-body no-padding">
+                            <form asp-action="Create" asp-controller="Models">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <div class="input-group margin">
+                                            <input id="Model" name="Model" type="text" class="form-control" required="">
+                                            <span class="input-group-btn">
+                                                @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                                <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <table id="kvm" class="table table-bordered table-striped dataTable">
+                        <thead style="background-color:darksalmon">
+                            <tr>
+                                <th style="width: 20px; text-align:center;">
+                                    ردیف
+                                </th>
+                                <th>مدل های کی وی ام</th>
+                                <th style="width: 45px;  align-content:center;">
+                                    عملیات
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var CounterK = 1;
+                            }
+                            @foreach (var item in Model.Where(i => i.Title == "kvm"))
+                        {
+                           
+                            <tr>
+                                    <td style="text-align:center;">
+                                        @CounterK
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                            </tr>
+                            CounterK += 1;
+                        }
+                        </tbody>
+                    </table>
+                    
+                </div>
+                    <div class="tab-pane" id="Laptop">
+                    <div class="box box-solid collapsed-box" style=" overflow:hidden; background-color:whitesmoke; border-color:whitesmoke">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">افزودن مدل</h3>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="box-body no-padding">
+                            <form asp-action="Create" asp-controller="Models">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <div class="input-group margin">
+                                            <input id="Model" name="Model" type="text" class="form-control" required="">
+                                            <span class="input-group-btn">
+                                                @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                                <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <table id="laptop" class="table table-bordered table-striped dataTable">
+                        <thead style="background-color:darksalmon">
+                            <tr>
+                                <th style="width: 20px; text-align:center;">
+                                    ردیف
+                                </th>
+                                <th>مدل های لپ تاپ</th>
+                                <th style="width: 45px;  align-content:center;">
+                                    عملیات
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var CounterL = 1;
+                            }
+                            @foreach (var item in Model.Where(i => i.Title == "laptop"))
+                            {
+                               
+                                <tr>
+                                    <td style="text-align:center;">
+                                        @CounterL
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                CounterL += 1;
+                            }
+                        </tbody>
+                    </table>
+                    
+                </div>
+                    <div class="tab-pane" id="Hardex">
+                    <div class="box box-solid collapsed-box" style=" overflow:hidden; background-color:whitesmoke; border-color:whitesmoke">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">افزودن مدل</h3>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="box-body no-padding">
+                            <form asp-action="Create" asp-controller="Models">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <div class="input-group margin">
+                                            <input id="Model" name="Model" type="text" class="form-control" required="">
+                                            <span class="input-group-btn">
+                                                @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                                <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <table id="hardEx" class="table table-bordered table-striped dataTable">
+                        <thead style="background-color:darksalmon">
+                            <tr>
+                                <th style="width: 20px; text-align:center;">
+                                    ردیف
+                                </th>
+                                <th>مدل های هارد اکسترنال</th>
+                                <th style="width: 45px;  align-content:center;">
+                                    عملیات
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var CounterH = 1;
+                            }
+                            @foreach (var item in Model.Where(i => i.Title == "hardEx"))
+                            {
+                              
+                                <tr>
+                                    <td style="text-align:center;">
+                                       @CounterH
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+                               
+                            } 
+                        </tbody>
+                        CounterH += 1;
+                    </table>
+                    
+                </div>
+                    <div class="tab-pane" id="sw">
+                    <div class="box box-solid collapsed-box" style=" overflow:hidden; background-color:whitesmoke; border-color:whitesmoke">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">افزودن مدل</h3>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="box-body no-padding">
+                            <form asp-action="Create" asp-controller="Models">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <div class="input-group margin">
+                                            <input id="Model" name="Model" type="text" class="form-control" required="">
+                                            <span class="input-group-btn">
+                                                @*  <button type="button" class="btn btn-info btn-flat">ارسال</button> *@
+                                                <button class="btn btn-info btn-flat" type="submit">ذخیره</button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <table id="switch printer" class="table table-bordered table-striped dataTable">
+                        <thead style="background-color:darksalmon">
+                            <tr>
+                                <th style="width: 20px; text-align:center;">
+                                    ردیف
+                                </th>
+                                <th>مدل های سوییچ پرینتر</th>
+                                <th style="width: 45px;  align-content:center;">
+                                    عملیات
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var CounterSw = 1;
+                            }
+                            @foreach (var item in Model.Where(i => i.Title == "switch printer"))
+                            {
+                               
+                               
+                                <tr>
+                                    <td style="text-align:center;">
+                                      
+                                        @CounterSw
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                            @Html.AntiForgeryToken()
+                                            @*  <input type="button" class="btn btn-sm btn-default" data-placement="top" data-toggle="tooltip" style="background-color:lightseagreen" data-original-title="سطل آشغال" /> *@
+
+                                            <button class="btn btn-sm btn-default" type="submit" data-placement="top" data-toggle="tooltip" data-original-title="سطل آشغال" style="background-color:lightsteelblue">
+                                                <i class="fa fa-trash-o"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                CounterSw += 1;
+                                }
+                        </tbody>
+                    </table>
+                    
+                </div>
+                </div>
+           </div>
+        <div class="col-xs-3">
+            <ul class="nav nav-tabs tabs-right">
+                <li class="">
+                    <a href="#home-r" data-toggle="tab" aria-expanded="false">Case</a>
+                </li>
+                <li class="">
+                    <a href="#profile-r" data-toggle="tab" aria-expanded="false">Monitor</a>
+                </li>
+                <li class="">
+                    <a href="#messages-r" data-toggle="tab" aria-expanded="false">Printer</a>
+                </li>
+                <li class="">
+                    <a href="#scan" data-toggle="tab" aria-expanded="true">Scanner</a>
+                </li>
+                <li class="">
+                    <a href="#thin" data-toggle="tab" aria-expanded="true">ThinClient</a>
+                </li>
+                <li class="">
+                    <a href="#kvm" data-toggle="tab" aria-expanded="true">Kvm</a>
+                </li>
+                <li class="">
+                    <a href="#Laptop" data-toggle="tab" aria-expanded="true">Laptop</a>
+                </li>
+                <li class="">
+                    <a href="#Hardex" data-toggle="tab" aria-expanded="true">HardExternal</a>
+                </li>
+                <li class="">
+                    <a href="#sw" data-toggle="tab" aria-expanded="true">SwitchPrinter</a>
+                </li>
+            </ul>
+        </div>
+   
+    <!-- jQuery 3 -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+       <!-- SlimScroll -->
+    <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+       <!-- jQuery -->
+<script src="../../lib/jquery/dist/jquery.min.js"></script>
+       <!-- FastClick -->
+<script src="../../lib/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+<script src="../../lib/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+<script src="../../lib/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+<script src="../../lib/iCheck/icheck.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+<script src="../../lib/moment/min/moment.min.js"></script>
+<script src="../../lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+      <!-- Custom Theme Scripts -->
+    <script src="js/custom.min.js"></script>
+@section Scripts
+     {
+    <script>
+        function(c) {
+            c.preventDefault(), b.call(a(home - r), "show")
+                c.preventDefault(), b.call(a(profile - r), "show")
+                c.preventDefault(), b.call(a(messages - r), "show")
+                  c.preventDefault(), b.call(a(scan), "show")
+                    c.preventDefault(), b.call(a(thin), "show")
+                    c.preventDefault(), b.call(a(kvm), "show")
+                    c.preventDefault(), b.call(a(Laptop), "show")
+                    c.preventDefault(), b.call(a(Hardex), "show")
+                    c.preventDefault(), b.call(a(sw), "show")
+    </script>
+}
+</div>
+</html>

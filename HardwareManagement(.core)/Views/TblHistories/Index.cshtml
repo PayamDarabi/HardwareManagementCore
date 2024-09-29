@@ -1,0 +1,90 @@
+﻿@model IEnumerable<HardwareManagement_.core_.Models.Entity.TblHistory>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AssetNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecieveDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserSender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepairDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OutOfDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusHw)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssetNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecieveDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserSender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepairDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OutOfDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusHw)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

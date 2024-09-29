@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <CalculationMode>Interpretation</CalculationMode>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="2">
+      <StoreStock Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>StoreStock</Alias>
+        <ConnectionStringEncrypted>9MLRz81WS5l9W+2Ay0wxY9Hy3YhIAbuVRQnt8XkFqzuBeNkLZ1VRmWtPhIBqSeGP0TrZzUZLWfBpCKHMaA3jIsRa+yhGCdOsYknVpXdcIquNdGmhyEqzzWwTKdzETPY=</ConnectionStringEncrypted>
+        <Key>512f0b7b00c3444eb43e15a807a5a207</Key>
+        <Name>StoreStock</Name>
+      </StoreStock>
+      <Store Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>Store</Alias>
+        <ConnectionStringEncrypted>9MLRz81WS5l9W+2Ay0wxY9Hy3YhIAbuVRQnt8XkFqzuBeNkLZ1VRmWtPhIBqSeGP0TrZzUZLWfBpCKHMaA3jIsRa+yhGCdOsYknVpXdcIquNdGmhyEqzzWwTKdzETPY=</ConnectionStringEncrypted>
+        <Key>7a87995b8fcc44a494d898153d03b37f</Key>
+        <Name>Store</Name>
+      </Store>
+    </Databases>
+    <DataSources isList="true" count="2">
+      <StoreStock Ref="4" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>StoreStock</Alias>
+        <Columns isList="true" count="4">
+          <value>ORIGINAL,Title,Title,Title,System.String,aca9ae0f3de24f249226ee0acc0242b4</value>
+          <value>ORIGINAL,Model,Model,Model,System.String,_x0035_d6d1b4d52b9497284e34be4b1ef59b7</value>
+          <value>ORIGINAL,AssetNo,AssetNo,AssetNo,System.String,fb70ee9697e143ed94a43a35e35de1ae</value>
+          <value>ORIGINAL,StatusHw,StatusHw,StatusHw,System.String,_x0037_33939e951f346b28028e2d40fa3151e</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>1012011e8e4b4908844e9555db7a8534</Key>
+        <Name>StoreStock</Name>
+        <NameInSource>StoreStock</NameInSource>
+        <Parameters isList="true" count="1">
+          <value>_x0040_Location,Location,12,200,737c92297e8143e6a0e54df9b47fc139</value>
+        </Parameters>
+        <SqlCommand>SELECT tblHardwares.Title, tblHardwares.Model, tblHardwares.AssetNo,
+  tblHardwares.StatusHw
+FROM tblHardwares
+WHERE tblHardwares.Location = @Location</SqlCommand>
+      </StoreStock>
+      <tblStore Ref="5" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>tblStore</Alias>
+        <Columns isList="true" count="2">
+          <value>ORIGINAL,StoreId,StoreId,StoreId,System.Int32,_x0035_aa64fb5154d439fa74e06b92562bd29</value>
+          <value>ORIGINAL,StLocation,StLocation,StLocation,System.String,_x0037_92d1cef9c884688ac449e14f7a54238</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>9101a304c4a043e993d5ecb59a41dd52</Key>
+        <Name>tblStore</Name>
+        <NameInSource>Store</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from tblStore</SqlCommand>
+      </tblStore>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="1">
+      <value>,Location,Location,,System.String,,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1.0_x0022__x0020_encoding_x003D__x0022_utf-16_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_version_x003D__x0022_1.02_x0022__x0020_type_x003D__x0022_Net_x0022__x0020_application_x003D__x0022_State_x0022__x003E__x003C_SortDirection_x003E_None_x003C__x002F_SortDirection_x003E__x003C_BindingVariable_x0020_isNull_x003D__x0022_true_x0022__x0020__x002F__x003E__x003C_Keys_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_Values_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C_CheckedStates_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x0020__x002F__x003E__x003C__x002F_StiSerializer_x003E_,_x0039_59b1112a08f4bb6a428bb923a132e81</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>9eaf74b017ab419988e956dfee1d4385</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="6" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="4">
+        <PageHeaderBand1 Ref="7" type="PageHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,7.49,0.6</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text1 Ref="8" type="Text" isKey="true">
+              <Border>None;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>3.4,0,2.5,0.5</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>B Nazanin,14,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>:لیست سخت افزار های موجود در</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text10 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.7,0,1.7,0.5</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>B Nazanin,14,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>{Location}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </PageHeaderBand1>
+        <PageHeaderBand2 Ref="10" type="PageHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1.2,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text2 Ref="11" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:192:0]</Brush>
+              <ClientRectangle>5.3,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="6" />
+              <Parent isRef="10" />
+              <Text>عنوان</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text5 Ref="12" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:192:0]</Brush>
+              <ClientRectangle>0,0,1.7,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="6" />
+              <Parent isRef="10" />
+              <Text>وضعیت</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text6 Ref="13" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:192:0]</Brush>
+              <ClientRectangle>1.7,0,1.7,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="6" />
+              <Parent isRef="10" />
+              <Text>شماره اموال</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text7 Ref="14" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:192:0]</Brush>
+              <ClientRectangle>3.4,0,1.9,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="6" />
+              <Parent isRef="10" />
+              <Text>مدل</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text3 Ref="15" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:192:0]</Brush>
+              <ClientRectangle>6.9,0,0.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="6" />
+              <Parent isRef="10" />
+              <Text>ردیف</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>PageHeaderBand2</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </PageHeaderBand2>
+        <PageFooterBand1 Ref="16" type="PageFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.51,7.49,0.4</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text8 Ref="17" type="Text" isKey="true">
+              <Border>All;[255:255:255];1;Solid;False;4;Black</Border>
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>3.5,-0.02,0.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="6" />
+              <Parent isRef="16" />
+              <Text>{PageNumberThrough}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>SystemVariables</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>PageFooterBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </PageFooterBand1>
+        <DataBand1 Ref="18" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,1.8,7.49,0.4</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text12 Ref="19" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>0,0,1.7,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="6" />
+              <Parent isRef="18" />
+              <Text>{StoreStock.StatusHw}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text13 Ref="20" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>1.7,0,1.7,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="6" />
+              <Parent isRef="18" />
+              <Text>{StoreStock.AssetNo}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text14 Ref="21" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>3.4,0,1.9,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="6" />
+              <Parent isRef="18" />
+              <Text>{StoreStock.Model}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text9 Ref="22" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>5.3,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="6" />
+              <Parent isRef="18" />
+              <Text>{StoreStock.Title}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text4 Ref="23" type="Text" isKey="true">
+              <Border>All;[0:0:0];1;Solid;False;4;Black</Border>
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>6.9,0,0.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="6" />
+              <Parent isRef="18" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="24" type="NumberFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>SystemVariables</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>StoreStock</DataSourceName>
+          <Expressions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Expressions isList="true" count="0" />
+      <Guid>16de31a18f4b4f6aafaac05525143572</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <PageHeight>11.69</PageHeight>
+      <PageWidth>8.27</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>2/28/2024 2:07:14 PM</ReportChanged>
+  <ReportCreated>11/14/2023 10:35:15 AM</ReportCreated>
+  <ReportFile>D:\Project\back\HwMg(.core)\HardwareManagement(.core)\HardwareManagement(.core)\Report\RptOfStoreStock.mrt</ReportFile>
+  <ReportGuid>e195e993482b41d0bedb3ea7d756d632</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2022.1.1.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

@@ -1,0 +1,68 @@
+﻿@model HardwareManagement_.core_.Models.Entity.TblStore
+@using Stimulsoft.Report.Mvc
+@using Stimulsoft.Report.Web
+@using System.Windows.Forms;
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            @{
+                 ViewBag.Title = "گزارش موجودی انبارها";
+            }
+    
+ <!-- /.box-header -->
+           <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close pull-left" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-ban"></i>توجه</h4>
+               موجودی انبارها
+              </div>
+
+<div class="box-body">
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-controller="Stores" asp-action="RptOfSt" method="post" >
+                    <div class="form-group">
+                        <div class="alert danger" asp-validation-summary="ModelOnly" ></div>
+                        <select asp-for="StoreId" class="form-control" asp-items="@(new SelectList( ViewBag.ListOfSt,"Value","Text"))">
+
+                        </select>
+                </div
+                <div class="text-center">
+              
+    </div>
+                
+            </form>
+            
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        </div>
+     @* <div>
+           
+            @Html.StiNetCoreViewer(new StiNetCoreViewerOptions()
+{
+    Actions =
+    {
+        GetReport = "GetReport",
+        ViewerEvent = "ViewerEvent"
+    }
+    //},
+    //Appearance =
+    //{
+    //    FullScreenMode = true
+    //},
+    //Toolbar =
+    //{
+    //    ShowFullScreenButton = false,
+    //    DisplayMode = StiToolbarDisplayMode.Separated
+    //}
+})
+         
+        
+    </div>*@
+        </body>
+</html>

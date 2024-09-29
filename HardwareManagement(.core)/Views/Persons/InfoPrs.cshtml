@@ -1,0 +1,145 @@
+﻿@model IEnumerable< HardwareManagement_.core_.Models.Entity.TblPerson>
+@{
+    var counter = 1;
+}
+
+@{
+    ViewData["Title"] = "InfoPrs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-critters-container="" data-bs-theme="light">
+
+<div class="content-header">
+    <h1 align="center">
+        سامانه مدیریت تجهیزات رایانه ای
+    </h1>
+
+    <o1 class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> مدیریت کارکنان</a></li>
+        <li class="active">اطلاعات کارکنان</li>
+
+    </o1>
+</div>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<button class="btn btn-primary ng-tns-c26662677-75 ng-star-inserted" style="" id="addbtn"><i class="fa fa-plus btn-md-icon ng-tns-c26662677-75"></i><span class="d-none d-md-inline-block ng-tns-c26662677-75"> Create new user </span></button>
+
+    <open-modal
+    url="/Persons/ShowAddModal"
+                title="افزودن کاربر">
+                    افزودن
+    </open-modal>
+                
+  
+   <section class="content">
+               <div class="box-header">
+                <h3 class="box-title">کارکنان</h3>
+            </div>
+            <br />
+            <br />
+            <div class="box-body">
+
+                <form asp-action="InfoPrs" asp-controller="Persons">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                        <thead>
+                            <tr>
+                                <th style=" Background:green ">
+                                    ردیف
+                                </th>
+
+                                <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-sort="ascending">نام فرد</th>
+                                <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-sort="ascending"> شماره پرسنلی</th>
+                                <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-sort="ascending">واحد</th>
+                                <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-sort="ascending">شماره اتاق</th>
+                                <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-sort="ascending">  شماره تماس</th>
+                                <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-sort="ascending"> وضعیت</th>
+                                <th style="Background:green " tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-sort="ascending">عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @counter
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PersonId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Unit)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RoomNo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Phone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Status)
+                                    </td>
+
+                                    <td>
+                                    @Html.DisplayFor(modelItem => item.Note)
+                                    </td>
+                                </tr>
+                                counter += 1;
+                            }
+                        </tbody>
+                    </table>
+                </form>
+                @section Scripts
+                {
+                    <script>
+                        $(document).ready(function () {
+                            $('#example1').DataTable();
+                        });
+                    </script>
+           
+                }
+            </div>
+            </section>
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../../dist/js/adminlte.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+</html>
+
+
