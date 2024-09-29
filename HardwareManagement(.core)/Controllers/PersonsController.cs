@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HardwareManagement_.core_.Models.Entity;
+using HardwareManagement_.core_.DTO;
 
 
 namespace HardwareManagement_.core_.Controllers
@@ -19,7 +20,7 @@ namespace HardwareManagement_.core_.Controllers
             _context = context;
         }
 
-       
+
 
         // GET: TblPersons
         public async Task<IActionResult> Index()
@@ -38,7 +39,25 @@ namespace HardwareManagement_.core_.Controllers
                              Problem("Entity set 'HardwaremanagementContext.tblPeople'  is null.");
         }
 
-        public async Task <IActionResult> ShowAddModal([Bind("PersonId,Name,Phone,Unit,RoomNo,Status,Note")] TblPerson tblPerson)
+        [HttpPost]
+        public async Task<IActionResult> SavePerson([FromBody] PersonDTO person)
+        {
+            TblPerson tbl = new TblPerson();
+            tbl.PersonId = person.PersonId;
+            tbl.Name = person.Name;
+            tbl.Phone = person.Phone;
+            tbl.Unit = person.Unit;
+            tbl.RoomNo = person.RoomNo;
+            tbl.Status = person.Status;
+            tbl.Note = person.Note;
+
+            _context.Add(tbl);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Create", "Persons");
+        }
+
+
+        public async Task<IActionResult> ShowAddModal([Bind("PersonId,Name,Phone,Unit,RoomNo,Status,Note")] TblPerson tblPerson)
         {
             if (ModelState.IsValid)
             {
@@ -47,9 +66,10 @@ namespace HardwareManagement_.core_.Controllers
                 return RedirectToAction("Create", "Persons");
             }
             return PartialView("_AddPrs", new TblPerson()
-            {Name=tblPerson.Name,
-            PersonId=tblPerson.PersonId,
-            Unit=tblPerson.Unit,
+            {
+                Name = tblPerson.Name,
+                PersonId = tblPerson.PersonId,
+                Unit = tblPerson.Unit,
             });
         }
 
@@ -88,7 +108,7 @@ namespace HardwareManagement_.core_.Controllers
             {
                 _context.Add(tblPerson);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Create","Persons");
+                return RedirectToAction("Create", "Persons");
             }
             return View();
         }
@@ -176,14 +196,14 @@ namespace HardwareManagement_.core_.Controllers
             {
                 _context.TblPeople.Remove(tblPerson);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool TblPersonExists(string id)
         {
-          return (_context.TblPeople?.Any(e => e.PersonId == id)).GetValueOrDefault();
+            return (_context.TblPeople?.Any(e => e.PersonId == id)).GetValueOrDefault();
         }
     }
 }
